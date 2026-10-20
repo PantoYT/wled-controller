@@ -253,11 +253,7 @@ elif JACK:
 else:
     F1_X = 21.59                                       # right of the screw input J2
 F1_Y = 3.0
-# On the wall board the holder's drills are opened to 1.9 mm, so Keystone 3568 (TME) and XFCN
-# XF-508P-B-B (LCSC, 0.12 mm closer pitch) both fit.
-F1_LIB, F1_FP = (("wled", "Fuseholder_Blade_Mini_Keystone_3568_XFCN_XF-508P") if L.get("cell") == "wall"
-                 else ("Fuse", "Fuseholder_Blade_Mini_Keystone_3568"))
-f1 = place("F1", "Mini blade fuse, 7.5 A max", F1_LIB, F1_FP,
+f1 = place("F1", "Mini blade fuse, 7.5 A max", "Fuse", "Fuseholder_Blade_Mini_Keystone_3568",
            F1_X, F1_Y, pads={"1": IN, "2": "+5V"})
 text("F1  MAIN FUSE", F1_X + 4.96, F1_Y + 7.4, 0.9)
 text("7.5 A MAX", F1_X + 4.96, F1_Y + 9.0, 0.8)  # 2.6 mm +5V tracks: ~6.5 A at 20 C rise, ~7.8 A at 30 C (IPC-2221, 1 oz outer)
@@ -342,7 +338,7 @@ for ch in range(1, 9):
         u1_pads[str(1 + ch)] = "GND"            # unused inputs must not float; outputs open
 u1 = place("U1", "74HCT245", "Package_DIP", "DIP-20_W7.62mm_Socket", U1_X, U1_Y, rot=L.get("u1_rot", 270),
            pads=u1_pads)                   # the "74HCT245" label names it
-text("74HCT245 / 74AHCT245", U1_X + (11.43 if L.get("u1_rot", 270) == 90 else -11.43),
+text("74HCT245  (HCT ONLY)", U1_X + (11.43 if L.get("u1_rot", 270) == 90 else -11.43),
      U1_Y + L.get("u1_label_dy", 11.4), 0.9)
 C3_X, C3_Y, C3_ROT = L["c3"]
 place("C3", "100nF", "Capacitor_THT", "C_Disc_D5.0mm_W2.5mm_P5.00mm", C3_X, C3_Y,
@@ -415,21 +411,17 @@ def channel_status(ch, c):
 
 
 def channel_wall(ch, c):
-    """wall cell, centre x = c, from the bottom edge up: screw terminal (+ D -), 3 A polyfuse,
-    100R, the channel number and an empty box to write the strip's name in.
-
-    The terminal footprint takes either XY302R (TME) or KF350 (LCSC). XY302R's wire entry ends
-    flush with the bottom edge; KF350 reaches 3.4 mm behind its pins, so the polyfuse row sits
-    far enough back for it. The polyfuse is RG300-16 (TME) or FRG300-16F (LCSC), same size."""
+    """wall cell, centre x = c, from the bottom edge up: XY302R terminal (+ D -), 3 A polyfuse,
+    100R, the channel number and an empty box to write the strip's name in."""
     v, d, raw = f"V_CH{ch}", f"DATA{ch}", f"OUT{ch}_RAW"
-    place(f"J{10 + ch}", f"Screw CH{ch}", "wled", "TerminalBlock_3P_P3.50mm_XY302R_KF350",
+    place(f"J{10 + ch}", f"Screw CH{ch}", "wled", "TerminalBlock_Xinya_XY302R-3_P3.50mm_Horizontal",
           c - 3.5, 52.07, pads={"1": v, "2": d, "3": "GND"})
-    place(f"F{10 + ch}", "RG300-16 / FRG300-16F 3A", "Fuse", PTC, c - 2.55, 46.0375, pads={"1": "+5V", "2": v})
-    place(f"R{ch}", "100R", "Resistor_THT", RV, c - 1.27, 42.8625, pads={"1": raw, "2": d})
-    text(f"{ch}", c, 39.4, 1.8, bold=True)
-    text(f"IO{CHANNEL_GPIO[ch - 1][1:]}", c, 34.5, 0.8)
-    for x0, y0, x1, y1 in ((c - 4.8, 35.6, c + 4.8, 35.6), (c + 4.8, 35.6, c + 4.8, 37.6),
-                           (c + 4.8, 37.6, c - 4.8, 37.6), (c - 4.8, 37.6, c - 4.8, 35.6)):
+    place(f"F{10 + ch}", "RG300-16 3A", "Fuse", PTC, c - 2.55, 47.625, pads={"1": "+5V", "2": v})
+    place(f"R{ch}", "100R", "Resistor_THT", RV, c - 1.27, 44.45, pads={"1": raw, "2": d})
+    text(f"{ch}", c, 40.9, 1.8, bold=True)
+    text(f"IO{CHANNEL_GPIO[ch - 1][1:]}", c, 35.9, 0.8)
+    for x0, y0, x1, y1 in ((c - 4.8, 37.0, c + 4.8, 37.0), (c + 4.8, 37.0, c + 4.8, 39.0),
+                           (c + 4.8, 39.0, c - 4.8, 39.0), (c - 4.8, 39.0, c - 4.8, 37.0)):
         segment(pcbnew.F_SilkS, x0, y0, x1, y1, 0.15)
 
 

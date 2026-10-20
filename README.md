@@ -56,6 +56,5 @@ The board passed KiCad's DRC with 0 violations and 0 unconnected items (2026-10-
 0.2 mm clearance and 0.4 mm tracks, both inside JLC's standard limits. Optional back
 art is made of 0.25 mm dots; JLC's minimum silkscreen line is 0.15 mm.
 
-Parts: `purchases/quickbuy-v2-wall.txt` (TME) or `purchases/lcsc-bom-wall.csv` (LCSC, can ship with
-the PCBs); the footprints take either. The rest was already on hand: 100 Ω resistors,
+TME parts: `purchases/quickbuy-v2-wall.txt`. The rest was already on hand: 100 Ω resistors,
 100 nF, two 1000 µF capacitors, the DC jack, a 2-pole 5.08 mm terminal, a 3 A blade fuse.
