@@ -46,6 +46,9 @@ are in `old-variants/`. `gen_board.py --size <x>` still builds any of them, into
   board Panto orders carries a wallpaper that is not his to publish, so the picture, the
   `-art` board and its Gerbers stay out of this repository. Silkscreen art costs nothing extra
   at JLC: it is the same white layer.
+- **Schematic:** `python schematic.py` draws `../docs/schematic-wall.svg/.png` from the net list
+  in the script (schemdraw); `schematic.py --check`, run with KiCad's Python, compares that
+  list with the routed board and exits 1 on any difference.
 - **Outputs:** `python fab.py wled-controller-v2-wall` writes `../jlc/<name>-gerbers.zip`
   (fails if no drill file came out), the STEP and the renders.
 - Routed by `route.py --size wall`: DRC 0 violations, 0 unconnected (2026-10-20). The strip

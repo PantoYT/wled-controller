@@ -14,6 +14,14 @@ checked for collisions against the boards' STEP models, including while the boar
 | wall mount for `wall` | designed, not printed | [enclosure/wall/](enclosure/wall/README.md) |
 | base and slide-in case for rev 1.0 | printed | [enclosure/rev1/](enclosure/rev1/README.md) |
 
+## Schematic (rev 2.0 `wall`)
+
+![schematic](docs/schematic-wall.png)
+
+[SVG](docs/schematic-wall.svg). The board is generated from code without a KiCad schematic, so
+`rev2/schematic.py` draws this from a net list and `schematic.py --check` compares that list
+with the routed board pad by pad (28 nets, 0 differences on 2026-10-20).
+
 ## Folders
 
 | Folder | What is in it |
