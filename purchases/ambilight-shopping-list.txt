@@ -1,0 +1,37 @@
+TV AMBILIGHT - SHOPPING LIST
+TV: Sharp Aquos (platform AQUOS_TVE19A, Android TV), about 90 x 50 cm.
+Strip on top + both sides = about 1.9 m = about 57 LEDs at 30 LEDs/m. Owned: about 1.6 m.
+Power from the TV USB port into the board's input (screw terminal or DC jack), WLED ABL
+limit 400 mA (0.5 A port) or 800 mA (1 A port). Prices checked on Allegro 2026-10-11.
+Free delivery from 49.90 PLN per seller needs an active Allegro Smart.
+
+IN THE ALLEGRO CART (2026-10-11): 160.64 PLN, two parcels
+
+=== www_mikrobot_pl  (83.64 PLN, delivery on Tuesday) ===
+ESP32-WROOM-32 USB-C CH340 (ambilight board)                          24.26
+  https://allegro.pl/produkt/sterownik-mikrobot-esp-wroom-32-usb-c-ch340-wifi-bt-70dd4a47-63a7-454c-9cbe-7fc0a9e5afa8?offerId=12575536101
+ESP32-WROVER-E 8MB PSRAM (for the MP3 player, bought early)           52.89
+  https://allegro.pl/produkt/plytka-esp32-wrover-e-kamera-ov2640-2mp-wifi-ble-8mb-psram-ch340-do-arduino-8f84601d-7ecb-4311-b596-6648fccea3a0?offerId=17881216176
+Cynel Sn60Pb40 1 mm 10 g with flux                                      6.49
+  https://allegro.pl/produkt/cyna-z-topnikiem-w-fiolce-cynel-sn60pb40-1-mm-10-g-sw26-do-lutowania-583c2820-fd52-4e76-a8f2-91e3d7ef50a3?offerId=17673658995
+
+=== lumenica  (77.00 PLN, same strip as the current one) ===
+JST-SM 3-pin connector pairs (plug + socket), 5 pairs                5 x 3.50
+  https://allegro.pl/produkt/konektory-para-gniazdo-wtyk-jst-sm-3-pin-do-tasm-ws2812b-ws2811-rgb-3eaded59-faf9-4052-8ef5-07f9049ccb22?offerId=17680312115
+WS2812B 5 V, 30 LEDs/m, IP30, black PCB, 5 x 1 m (sold per metre)    5 x 11.90
+  https://allegro.pl/oferta/1m-tasma-ws2812b-argb-5v-30-diod-m-ip30-smart-magic-led-czarne-pcb-18922593462
+  Only 2 m are needed (23.80 + 10.49 delivery); 5 m reaches free delivery with 3 m spare.
+
+=== USB power cable ===
+Plan: an old USB-A cable, cut, red/black wires into the board's screw input (J2).
+If a ready cable is preferred:
+  Dareltek USB-A -> DC 5.5/2.1 plug, 80 cm, plain 5 V                    4.20
+  https://allegro.pl/produkt/przewod-zasilajacy-usb-dc-5-5x2-1mm-80cm-7e65cb1e-9aba-4079-b5d4-30e7933b27e4?offerId=10478769622
+  (Dareltek showed "delivery in 9 days" on 2026-10-11.)
+DO NOT BUY: Mikrobot "adapter USB wtyk DC 5.5x2.1mm 5V-9V" - it contains a 9 V step-up
+and would destroy the 5 V board.
+
+=== already owned / pending ===
+WLED controller PCB (JLC, in transit), CD74HCT125E x2, DIP-14 socket, 1000 uF caps,
+100 ohm resistors, screw terminals, female headers.
+PC-GK2.1 DC jack x3: paid, at TME warehouse, dispatch requested (TME ticket 40672924).

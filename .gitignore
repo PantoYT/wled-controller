@@ -1,0 +1,22 @@
+# WLED config backups: network name and fixed IP of the desk controller
+backups/
+
+# Back-silkscreen art: the picture is someone else's work, so it and everything made from it
+# stay local. gen_board.py --art builds the -art board from art/silk-runs.json.
+rev2/art/*
+!rev2/art/make_art.py
+*-art.kicad_*
+*-art-gerbers.zip
+rev2/renders/*-art-*.png
+
+# Caches and tool state
+board.stl
+.impeccable/
+desktop.ini
+*.lck
+*-backups/
+fp-info-cache
+__pycache__/
+
+# Secrets, if any ever appear
+.env

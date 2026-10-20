@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "wled") (type "KiCad") (uri "${KIPRJMOD}/../../footprints/wled.pretty") (options "") (descr "Footprints made for this board"))
+)
