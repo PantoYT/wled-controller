@@ -338,7 +338,7 @@ for ch in range(1, 9):
         u1_pads[str(1 + ch)] = "GND"            # unused inputs must not float; outputs open
 u1 = place("U1", "74HCT245", "Package_DIP", "DIP-20_W7.62mm_Socket", U1_X, U1_Y, rot=L.get("u1_rot", 270),
            pads=u1_pads)                   # the "74HCT245" label names it
-text("74HCT245  (HCT ONLY)", U1_X + (11.43 if L.get("u1_rot", 270) == 90 else -11.43),
+text("74HCT245 / 74AHCT245", U1_X + (11.43 if L.get("u1_rot", 270) == 90 else -11.43),
      U1_Y + L.get("u1_label_dy", 11.4), 0.9)
 C3_X, C3_Y, C3_ROT = L["c3"]
 place("C3", "100nF", "Capacitor_THT", "C_Disc_D5.0mm_W2.5mm_P5.00mm", C3_X, C3_Y,
