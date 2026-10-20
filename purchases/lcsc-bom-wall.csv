@@ -1,0 +1,7 @@
+LCSC Part Number,Quantity,Manufacturer Part,Use,Board refs
+C1548096,2,SN74AHCT245N,shifter (one spare),U1
+C72127,2,DS1001-01-20BT1NSF6S-JKB,DIP-20 socket (one spare),U1
+C19727305,5,XF-508P-B-B,mini blade fuse holder (MOQ 5),F1
+C2687068,10,FRG300-16F,3 A polyfuse per channel (6 used),F11-F16
+C474893,10,KF350-3.5-3P,3-pole 3.5 mm screw terminal (6 used),J11-J16
+C2932676,5,KH-2.54FH-1X15P-H8.5,1x15 female header for the DevKit (2 used; MOQ 5),U2 U3

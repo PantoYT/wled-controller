@@ -24,6 +24,18 @@ are in `old-variants/`. `gen_board.py --size <x>` still builds any of them, into
   an empty box to write the strip's name in. No JST sockets: the strips' JST SM pairs come
   with leads, and the lead goes straight into the terminal, so no cable is soldered or
   crimped; the strip unplugs at its SM connector.
+- **Parts from TME or LCSC.** The footprints take either source, so the parts can come with
+  the PCBs from JLC/LCSC in one parcel:
+
+  | Part | TME | LCSC | What the footprint does |
+  |---|---|---|---|
+  | screw terminal 3P 3.5 mm | XY302R-3P-3.5-GN | KF350-3.5-3P (C474893) | same pads; courtyard covers both bodies (XY302R 0.7 mm behind its pins and 8.5 mm in front, KF350 3.4 / 3.5 mm); XY302R ends flush with the edge, KF350 about 6 mm inside it |
+  | polyfuse 3 A | RG300-16 | FRG300-16F (C2687068) | identical size, 5.1 mm pitch |
+  | mini blade fuse holder | Keystone 3568 | XF-508P-B-B (C19727305) | Keystone's footprint with the drills opened to 1.9 mm: XFCN's 1.6 x 0.4 mm tabs sit on a 9.80 mm pitch instead of 9.92 |
+  | DevKit sockets 1x15, 8.5 mm | SSW-115-01-T-S | KH-2.54FH-1X15P-H8.5 (C2932676) | standard 2.54 mm |
+  | shifter, DIP-20 socket | SN74AHCT245N, 1-2199298-6 | C1548096, C72127 | standard DIP-20 |
+
+  Lists: `../purchases/quickbuy-v2-wall.txt` (TME) and `../purchases/lcsc-bom-wall.csv` (LCSC).
 - **Inputs:** the DC jack (5.5/2.1, turned so the plug goes in from the top edge, the open
   end of the wall mount) and the 2-pole screw terminal J2 next to it, in parallel before the
   main blade fuse F1. One source at a time. J2 is for a bigger supply later; the jack has no
