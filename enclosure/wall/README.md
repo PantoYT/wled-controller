@@ -10,17 +10,17 @@ grooves and sits on stops at the bottom. The front is open, so the whole board s
 ![back](renders/wall-back.png)
 ![sliding in](renders/wall-sliding.png)
 
-106.4 × 73.5 × 9.7 mm (without the board). One part. 15.7 cm³ solid, about 19 g of
+107.0 × 73.5 × 10.0 mm (without the board). One part. 16.1 cm³ solid, about 20 g of
 PLA at 100 % infill and less with normal infill; rev 1.0's solid base took about 50 g.
 
 ## Against rev 1.0's base
 
 | rev 1.0 base | this mount |
 |---|---|
-| board loose on three pegs | both long edges held in grooves, 0.2 mm play per side in x |
+| board loose on three pegs | both long edges held in grooves, 0.5 mm play per side in x |
 | no rails | board slides in from the top, stops at the bottom |
 | tips when the right side is pressed | four posts under H1-H4 hold the board up when a terminal screw or plug pushes it |
-| | last 12 mm of each groove close to 1.65 mm for the 1.6 mm board: pressed in, no rattle |
+| | grooves 2.2 mm for the 1.6 mm board, closing to 2.0 mm over the last 12 mm; four M2 screws hold it |
 
 The posts pass under the board's own lead columns on the way in; `check` tests that every
 4 mm of the slide (the `wall` board's holes were placed for that).
@@ -39,8 +39,8 @@ The posts pass under the board's own lead columns on the way in; `check` tests t
 
 ## Fits
 
-All in the constants at the top of `wall.py`: `SLOT_PLAY_Z` (groove 1.9 mm), `PINCH_Z`
-(closes to 1.65 mm over `PINCH_L`), `SLOT_PLAY_X` (0.2 mm per side), `LIP`, `POST_D`. Tight
+All in the constants at the top of `wall.py`: `SLOT_PLAY_Z` (groove 2.2 mm), `PINCH_Z`
+(closes to 2.0 mm over `PINCH_L`), `SLOT_PLAY_X` (0.5 mm per side), `LIP`, `POST_D`. Tight
 on the fit test → lower `PINCH_Z`; loose → raise it. Regenerate and nothing else changes.
 
 ```
@@ -53,3 +53,6 @@ python wall.py render    # renders/wall-*.png
 The board STEP is `../../rev2/wled-controller-v2-wall.step` (`kicad-cli pcb export step
 --subst-models`). Built in KiCad's mirrored frame like `../enclosure.py`; `real()` mirrors on
 export. Not printed yet.
+
+First PETG fit test (2026-10-29): with 0.2 mm play per side and a 1.9 mm groove the board
+spread the rails and did not reach the stops, so both were opened up (values above).

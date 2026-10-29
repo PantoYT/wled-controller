@@ -43,11 +43,11 @@ HOLES = [(3.5, 21.0), (3.5, 33.0), (96.52, 39.37), (96.52, 57.15)]   # H1-H4, ge
 CHANNELS = [70.58 - 12.0 * k for k in range(6)]                       # CH1-CH6 centres
 
 # ---------------------------------------------------------------- fits (mm), tune here
-SLOT_PLAY_Z = 0.3          # board 1.6 in a 1.9 groove...
-PINCH_Z = 0.25             # ...that closes to 1.65 over the last PINCH_L mm
+SLOT_PLAY_Z = 0.6          # board 1.6 in a 2.2 groove (1.9 was too tight in PETG, 2026-10-29)...
+PINCH_Z = 0.2              # ...that closes to 2.0 over the last PINCH_L mm; the M2 screws hold it
 PINCH_L = 12.0
 PINCH_RAMP = 3.0           # half the pinch over this length first, so the board finds its way in
-SLOT_PLAY_X = 0.2          # per side, board edge to groove bottom
+SLOT_PLAY_X = 0.5          # per side, board edge to groove bottom (0.2 spread the rails in PETG)
 LENGTH_PLAY = 0.3          # board's bottom edge to the stops
 LIP = 1.2                  # how far the groove lips reach over the board's top face
 LIP_T = 1.4
