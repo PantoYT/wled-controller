@@ -1,7 +1,7 @@
 # Wall mount (rev 2.0 `wall` board)
 
 An open frame with a flat back: a rail down each side, an X brace between them, a middle
-bar with two 24 × 18 mm pads for double-sided tape, and a bottom bar with a cable-tie block
+bar through the crossing of the X with two 24 × 18 mm pads for double-sided tape, and a bottom bar with a cable-tie block
 under each of the six outputs. The board drops in from the top, slides down in the rails'
 grooves and sits on stops at the bottom. The front is open, so the whole board shows.
 
@@ -10,7 +10,7 @@ grooves and sits on stops at the bottom. The front is open, so the whole board s
 ![back](renders/wall-back.png)
 ![sliding in](renders/wall-sliding.png)
 
-106.4 × 73.5 × 9.7 mm (without the board). One part, no screws. 15.8 cm³ solid, about 20 g of
+106.4 × 73.5 × 9.7 mm (without the board). One part. 15.7 cm³ solid, about 19 g of
 PLA at 100 % infill and less with normal infill; rev 1.0's solid base took about 50 g.
 
 ## Against rev 1.0's base
@@ -32,6 +32,10 @@ The posts pass under the board's own lead columns on the way in; `check` tests t
 - `wall.stl`: back face on the bed, no supports (the groove lips are 1.2 mm overhangs, the
   tie tunnels 4 mm bridges). PETG black or PLA black from the filament shelf.
 - Tape: thin double-sided foam tape on the two pads on the middle bar.
+- Screws: four M2 x 8 through the board's mounting holes into the posts. Each post has a
+  1.7 mm hole all the way through, so the screw cuts its own thread in the plastic (or tap
+  it M2 first); the post is 6.4 mm tall, exactly what is left of the screw past the 1.6 mm
+  board, so the tip ends flush with the back and does not touch the wall.
 
 ## Fits
 

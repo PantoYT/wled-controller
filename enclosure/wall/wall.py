@@ -6,7 +6,8 @@ in from the top, its left and right edges in the rails' grooves, and slides down
 on the stops at the bottom of the grooves. Gravity holds it there; the last PINCH_L mm of each
 groove is narrower, so the board is pressed in rather than resting loose. Four posts under the
 mounting holes hold the board up when a terminal screw or plug pushes it towards the wall, so
-it no longer tips like rev 1.0's base did. The front is open: the whole board shows.
+it no longer tips like rev 1.0's base did, and take an M2 x 8 screw each through the board's
+holes, so it cannot be lifted out either. The front is open: the whole board shows.
 
 The bottom bar carries a cable-tie block under each output, so the strip leads pull on the
 frame and not on the terminals or the tape. Rev 1.0's solid base took about 50 g of filament;
@@ -55,12 +56,14 @@ RAIL_W = 3.0               # rail wall outside the groove
 PLATE_T = 2.4
 LEAD_CLEAR = 1.0           # leads to the plate
 POST_D = 5.0               # under the mounting holes; they pass under the board's own columns
+SCREW_PILOT = 1.7          # through each post: an M2 x 8 cuts its own thread (or tap it M2); the
+                           # 6.4 mm post takes exactly the 8 - 1.6 mm left past the board, so the
+                           # tip ends flush with the back
 STOP_L = 2.4               # stop block below each groove
 TAB = 9.0                  # bottom bar below the board, for the cable ties
 BRACE_W = 6.0              # X brace and middle bar
 PAD_W, PAD_H = 24.0, 18.0  # the two tape pads on the middle bar
 PAD_X = (25.0, 75.0)
-MID_Y = 31.0
 TIE_W, TIE_H = 4.0, 1.8    # tunnel for 3.6 x 1.2 mm cable ties
 CORNER_R = 3.0
 
@@ -116,14 +119,18 @@ def mount() -> Part:
     m = rail(True) + rail(False)
     inner0, inner1 = X0 + RAIL_W, X1 - RAIL_W
     m += (bar(inner0, 0, inner1, y_bot, BRACE_W) + bar(inner0, y_bot, inner1, 0, BRACE_W)) & frame
-    m += box(X0, X1, MID_Y - BRACE_W / 2, MID_Y + BRACE_W / 2, Z_BACK, Z_PLATE)   # middle bar
+    mid_y = y_bot / 2                                        # where the diagonals cross
+    m += box(X0, X1, mid_y - BRACE_W / 2, mid_y + BRACE_W / 2, Z_BACK, Z_PLATE)   # middle bar
     for x in PAD_X:                                          # tape pads
-        m += box(x - PAD_W / 2, x + PAD_W / 2, MID_Y - PAD_H / 2, MID_Y + PAD_H / 2, Z_BACK, Z_PLATE)
+        m += box(x - PAD_W / 2, x + PAD_W / 2, mid_y - PAD_H / 2, mid_y + PAD_H / 2, Z_BACK, Z_PLATE)
     bottom = box(X0, X1, y_bot - BRACE_W, Y_END, Z_BACK, Z_PLATE)
     m += fillet(bottom.edges().filter_by(Axis.Z).group_by(Axis.Y)[-1], CORNER_R)
     for x, y in HOLES:                                       # posts, joined to the rails
         m += Pos(x, y, Z_BACK) * Cylinder(POST_D / 2, -Z_BACK,
                                           align=(Align.CENTER, Align.CENTER, Align.MIN))
+    for x, y in HOLES:                                       # M2 pilot, all the way through
+        m -= Pos(x, y, Z_BACK - 0.01) * Cylinder(SCREW_PILOT / 2, -Z_BACK + 0.02,
+                                                 align=(Align.CENTER, Align.CENTER, Align.MIN))
     y_tie = y_bot + TAB / 2
     for x in CHANNELS:
         m += tie_block(x, y_tie)
