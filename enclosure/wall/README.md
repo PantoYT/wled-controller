@@ -33,8 +33,9 @@ The posts pass under the board's own lead columns on the way in; `check` tests t
   tie tunnels 4 mm bridges). PETG black or PLA black from the filament shelf.
 - Tape: thin double-sided foam tape on the two pads on the middle bar.
 - Screws: four M2 x 8 through the board's mounting holes into the posts. Each post has a
-  1.7 mm hole all the way through, so the screw cuts its own thread in the plastic (or tap
-  it M2 first); the post is 6.4 mm tall, exactly what is left of the screw past the 1.6 mm
+  2.0 mm hole all the way through (it prints narrower, about 1.6-1.7 mm, the size an M2 tap
+  needs; 1.7 in the model came out too small in PETG), so the screw cuts its own thread or
+  you tap it M2 first; the post is 6.4 mm tall, exactly what is left of the screw past the 1.6 mm
   board, so the tip ends flush with the back and does not touch the wall.
 
 ## Fits

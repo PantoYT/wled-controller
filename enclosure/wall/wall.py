@@ -56,7 +56,7 @@ RAIL_W = 3.0               # rail wall outside the groove
 PLATE_T = 2.4
 LEAD_CLEAR = 1.0           # leads to the plate
 POST_D = 5.0               # under the mounting holes; they pass under the board's own columns
-SCREW_PILOT = 1.7          # through each post: an M2 x 8 cuts its own thread (or tap it M2); the
+SCREW_PILOT = 2.0          # through each post, prints about 1.6-1.7 (1.7 in the model came out too small for an M2 tap in PETG); M2 x 8 taps or self-threads; the
                            # 6.4 mm post takes exactly the 8 - 1.6 mm left past the board, so the
                            # tip ends flush with the back
 STOP_L = 2.4               # stop block below each groove
